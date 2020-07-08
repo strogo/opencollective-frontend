@@ -254,11 +254,13 @@
       "*": {
         "dependencies": {
           "react": "-",
-          "react-dom": "-"
+          "react-dom": "-",
+          "styled-components": "-"
         },
         "peerDependencies": {
           "react": "+",
-          "react-dom": "+"
+          "react-dom": "+",
+          "styled-components": "+"
         }
       }
     },
