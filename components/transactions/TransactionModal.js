@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useQuery } from '@apollo/react-hooks';
+import { useQuery } from '@apollo/client';
 import { ArrowRight } from '@styled-icons/feather/ArrowRight';
 import { Download as IconDownload } from '@styled-icons/feather/Download';
 import { Link as IconLink } from '@styled-icons/feather/Link';
@@ -39,6 +39,7 @@ const hostFieldsFragment = gqlV2`
     }
   }
 `;
+
 const transactionModalQuery = gqlV2`
   query TransactionModal($legacyExpenseId: Int!) {
     expense(expense: { legacyId: $legacyExpenseId }) {
