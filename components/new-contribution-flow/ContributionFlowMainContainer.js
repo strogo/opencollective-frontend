@@ -32,6 +32,7 @@ class NewContributionFlowMainContainer extends React.Component {
       stepDetails: PropTypes.object,
       stepProfile: PropTypes.object,
       stepSummary: PropTypes.object,
+      stepPayment: PropTypes.object,
     }),
     contributeAs: PropTypes.object,
   };
@@ -141,7 +142,15 @@ class NewContributionFlowMainContainer extends React.Component {
         );
       }
       case 'payment':
-        return <StepPayment collective={this.props.collective} />;
+        return (
+          <StepPayment
+            collective={this.props.collective}
+            stepDetails={this.props.mainState.stepDetails}
+            stepProfile={this.props.mainState.stepProfile}
+            stepPayment={this.props.mainState.stepPayment}
+            onChange={this.props.onChange}
+          />
+        );
       case 'summary':
         return (
           <StepSummary
