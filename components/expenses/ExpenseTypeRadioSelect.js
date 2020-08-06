@@ -23,6 +23,10 @@ const ExpenseTypeLabels = defineMessages({
     id: 'ExpenseForm.ReceiptLabel',
     defaultMessage: 'Reimbursement',
   },
+  [expenseTypes.FUNDING_REQUEST]: {
+    id: 'ExpenseForm.Type.Request',
+    defaultMessage: 'Funding Request',
+  },
 });
 
 const ExpenseTypeDescription = defineMessages({
@@ -33,6 +37,10 @@ const ExpenseTypeDescription = defineMessages({
   [expenseTypes.INVOICE]: {
     id: 'ExpenseForm.InvoiceDescription',
     defaultMessage: 'Bill for your time or a service.',
+  },
+  [expenseTypes.FUNDING_REQUEST]: {
+    id: 'ExpenseForm.FundingRequestDescription',
+    defaultMessage: 'Funding Request for your project or initiative.',
   },
 });
 
@@ -134,6 +142,12 @@ const ExpenseTypeRadioSelect = ({ name, onChange, value }) => {
             name={name}
             type={expenseTypes.INVOICE}
             isChecked={value === expenseTypes.INVOICE}
+            onChange={onChange}
+          />
+          <ExpenseTypeOption
+            name={name}
+            type={expenseTypes.FUNDING_REQUEST}
+            isChecked={value === expenseTypes.FUNDING_REQUEST}
             onChange={onChange}
           />
         </Flex>

@@ -3155,14 +3155,19 @@ All supported expense types
 """
 enum ExpenseType {
   """
-  Invoice: Get paid back for a purchase already made.
+  Invoice: Charge for your time or get paid in advance.
   """
   INVOICE
 
   """
-  Receipt: Charge for your time or get paid in advance
+  Receipt:  Get paid back for a purchase already made.
   """
   RECEIPT
+
+  """
+  Funding Request: Request funding for a project or initiative.
+  """
+  FUNDING_REQUEST
 
   """
   Unclassified expense
@@ -4708,6 +4713,7 @@ enum PayoutMethodType {
   OTHER
   PAYPAL
   BANK_ACCOUNT
+  ACCOUNT_BALANCE
 }
 
 """
